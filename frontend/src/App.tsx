@@ -3,6 +3,8 @@ import './App.css'
 import SignIn from "./components/mycomponents/login";
 import SignUp from "./components/mycomponents/signup";
 import { ThemeProvider } from "./components/mycomponents/themes/theme-provider";
+import AppLayout from "./layouts/AppLayout";
+import Home from "./pages/Home";
 
 
 
@@ -16,6 +18,11 @@ function App() {
             <Route>
               <Route index element={<SignIn />} />
               <Route path="signup" element={<SignUp />} />
+            </Route>
+            <Route element={
+              <AppLayout />
+            }>
+              <Route path="/home" element={<Home />} />
             </Route>
           </Routes>
         </BrowserRouter>
