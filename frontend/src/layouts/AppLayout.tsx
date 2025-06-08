@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom"
-import Sidebar from "@/components/mycomponents/app/sidebar"
+import Sidebar from "@/components/mycomponents/app/sidebar/sidebar"
 import Challanges from "@/components/mycomponents/app/challenges"
 
 function AppLayout() {
