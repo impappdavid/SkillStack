@@ -20,7 +20,7 @@ function Sidebar() {
 
 
     const notificationCount = 4;
-    const baseClass = "flex gap-3 items-center w-fit lg:pr-4.5 py-2 px-2 lg:px-3.5 rounded-lg transition-all duration-300";
+    const baseClass = "flex gap-3 items-center w-fit lg:pr-4.5 py-2 px-2 lg:px-3.5 rounded-2xl transition-all duration-300";
     return (
         <>
             <div className="flex flex-col justify-between fixed top-0  w-fit lg:w-56 h-screen pb-3">
@@ -51,16 +51,7 @@ function Sidebar() {
                             <div className="text-lg hidden lg:flex">Challanges</div>
                         </NavLink>
 
-                        <NavLink
-                            to="/messages"
-                            className={({ isActive }) =>
-                                isActive
-                                    ? `${baseClass} dark:bg-zinc-900/80 bg-zinc-200 dark:text-white`
-                                    : `${baseClass} text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-900/80 dark:hover:text-white hover:text-black`
-                            }
-                        ><MessageSquareMore className="w-5 h-5" />
-                            <div className="text-lg hidden lg:flex">Messages</div>
-                        </NavLink>
+
 
                         <NavLink
                             to="/notifications"
@@ -118,7 +109,7 @@ function Sidebar() {
                 <DropdownMenu >
                     <DropdownMenuTrigger asChild className="bg-transparent">
 
-                        <div className="flex gap-2 p-2 px-2 items-center justify-between dark:hover:bg-zinc-900/80 hover:bg-zinc-300 rounded-lg cursor-pointer transition-all duration-100">
+                        <div className="flex gap-2 p-2 px-2 items-center justify-between dark:hover:bg-zinc-900/80 hover:bg-zinc-300 rounded-2xl cursor-pointer transition-all duration-100">
                             <div className="flex gap-2 items-center">
                                 <div className="">
                                     <ScanFace className="w-7 h-7" />

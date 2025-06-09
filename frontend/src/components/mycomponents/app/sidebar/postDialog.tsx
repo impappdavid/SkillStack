@@ -18,7 +18,7 @@ function PostDialog() {
             <Dialog>
                 <form>
                     <DialogTrigger asChild>
-                        <Button className="mt-3 mx-0.5 h-11 cursor-pointer flex gap-1 items-center justify-center lg:w-full w-fit py-2 px-2 bg-sky-500 hover:bg-sky-600 text-black rounded-lg font-medium transition-all duration-300">
+                        <Button className="mt-3 mx-0.5 h-11 cursor-pointer flex gap-1 items-center justify-center lg:w-full w-fit py-2 px-2 bg-sky-500 hover:bg-sky-600 text-black rounded-2xl font-medium transition-all duration-300">
                             <SendHorizontal className="w-4 h-4 flex lg:hidden" />
                             <div className="text-lg hidden lg:flex">Post</div>
                         </Button>
