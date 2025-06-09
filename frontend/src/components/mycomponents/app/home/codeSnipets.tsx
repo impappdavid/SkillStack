@@ -22,7 +22,6 @@ function CodeSnippetCard() {
     variant="ghost"
     size="icon"
     className="absolute right-2 top-2 h-8 w-8 text-zinc-400 hover:text-white"
-    onClick={copyToClipboard}
 >
     {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
 </Button>`;

@@ -36,7 +36,7 @@ function ExploreCard() {
         <>
 
             <div className="">
-                <Link to={`/post`} className="flex flex-col w-full gap-2 p-4 transition-all duration-300 border-b hover:bg-zinc-900/20">
+                <Link to={`/post`} className="flex flex-col w-full gap-2 p-4 transition-all duration-300 border-b hover:bg-zinc-200/80 dark:hover:bg-zinc-900/20">
                     <div className="flex items-start justify-between">
                         <div className="flex items-start gap-3">
                             <ScanFace className="w-8 h-8" />
@@ -47,10 +47,10 @@ function ExploreCard() {
                                         e.stopPropagation();
                                         navigate(`/profile/`)
                                     }}>Papp Dávid</div>
-                                    <div className="text-xs text-zinc-400"
+                                    <div className="text-xs dark:text-zinc-400 text-zinc-600"
                                     >@lenfear23</div>
                                     <div className="w-1 h-1 rounded-full bg-zinc-500"></div>
-                                    <div className="text-xs text-zinc-400">2h</div>
+                                    <div className="text-xs dark:text-zinc-400 text-zinc-600">2h</div>
                                 </div>
                                 <div className="text-md font-normal">Explore card</div>
                             </div>
@@ -58,7 +58,7 @@ function ExploreCard() {
                         </div>
                         <DropdownMenu>
                             <DropdownMenuTrigger asChild>
-                                <div className=" rounded-full hover:text-white text-zinc-400 transition-all duration-300" onClick={(e) => {
+                                <div className=" rounded-full dark:hover:text-white hover:text-black dark:text-zinc-400 text-zinc-600 transition-all duration-300" onClick={(e) => {
                                     e.preventDefault();    // Prevent anchor navigation
                                     e.stopPropagation();   // Stop event bubbling
                                 }}>
@@ -94,11 +94,11 @@ function ExploreCard() {
                         <div className="flex gap-2 w-full items-center justify-between">
                             <Link to={`/`} className="flex items-center group">
                                 <div className="flex justify-center h-8 w-8 items-center bg-transparent rounded-full group  group-hover:bg-sky-500/10 cursor-pointer">
-                                    <MessageSquare className={`text-zinc-400 w-4 h-4 transition-all duration-300 group-hover:text-sky-500
+                                    <MessageSquare className={`dark:text-zinc-400 text-zinc-600 w-4 h-4 transition-all duration-300 group-hover:text-sky-500
                                     }`} />
 
                                 </div>
-                                <div className="text-xs text-zinc-400">13</div>
+                                <div className="text-xs dark:text-zinc-400 text-zinc-600">13</div>
                             </Link>
                             <div className="flex items-center group" onClick={(e) => {
                                 e.preventDefault();    // Prevent anchor navigation
@@ -112,7 +112,7 @@ function ExploreCard() {
                                         }`} />
 
                                 </Button>
-                                <div className="text-xs text-zinc-400">13</div>
+                                <div className="text-xs dark:text-zinc-400 text-zinc-600">13</div>
                             </div>
 
                             <div className="flex items-center group">
@@ -120,10 +120,10 @@ function ExploreCard() {
                                     e.preventDefault();    // Prevent anchor navigation
                                     e.stopPropagation();   // Stop event bubbling
                                 }} className="flex h-8 w-8 transition-all duration-300 bg-transparent rounded-full group-hover:bg-sky-500/10 text-zinc-400 hover:text-white">
-                                    <ChartNoAxesColumn className={` transition-all duration-300 group-hover:text-sky-500`} />
+                                    <ChartNoAxesColumn className={` transition-all duration-300 group-hover:text-sky-500 dark:text-zinc-400 text-zinc-600`} />
 
                                 </Button>
-                                <div className="text-xs text-zinc-400">22k</div>
+                                <div className="text-xs dark:text-zinc-400 text-zinc-600">22k</div>
                             </div>
 
                             <div className="flex">
@@ -131,13 +131,13 @@ function ExploreCard() {
                                     e.preventDefault();    // Prevent anchor navigation
                                     e.stopPropagation();   // Stop event bubbling
                                 }} className="flex h-8 w-8 gap-1.5 transition-all duration-300 bg-transparent rounded-full hover:bg-sky-500/10 text-zinc-400 hover:text-white">
-                                    <Bookmark className={` transition-all duration-300 `} />
+                                    <Bookmark className={` transition-all duration-300 dark:text-zinc-400 text-zinc-600`} />
                                 </Button>
                                 <Button onClick={(e) => {
                                     e.preventDefault();    // Prevent anchor navigation
                                     e.stopPropagation();   // Stop event bubbling
                                 }} className="flex h-8 w-8 gap-1.5 transition-all duration-300 bg-transparent rounded-full hover:bg-sky-500/10 text-zinc-400 hover:text-white">
-                                    <Share className={` transition-all duration-300 `} />
+                                    <Share className={` transition-all duration-300 dark:text-zinc-400 text-zinc-600`} />
                                 </Button>
 
                             </div>

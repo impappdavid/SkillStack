@@ -1,20 +1,16 @@
-import { Bell, Bookmark, EllipsisVertical, Heart, House, Inbox, Medal, Megaphone, MessageSquareMore, ScanFace, Search, Send, SendHorizontal, Settings, StickyNote, User, Users } from "lucide-react"
+import { Bell, Bookmark, EllipsisVertical, House, LogOut, Medal, MessageSquareMore, ScanFace, Settings, User, } from "lucide-react"
 import { Link, NavLink } from "react-router-dom";
 import {
     DropdownMenu,
     DropdownMenuContent,
-    DropdownMenuGroup,
     DropdownMenuItem,
-    DropdownMenuLabel,
-    DropdownMenuPortal,
     DropdownMenuSeparator,
     DropdownMenuShortcut,
-    DropdownMenuSub,
-    DropdownMenuSubContent,
-    DropdownMenuSubTrigger,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import PostDialog from "./postDialog";
+import ModeToggle from "../../themes/mode-toggle";
 
 function Sidebar() {
     const [loading, setLoading] = useState(true)
@@ -24,7 +20,7 @@ function Sidebar() {
 
 
     const notificationCount = 4;
-    const baseClass = "flex gap-3 items-center w-fit lg:pr-4.5 py-2 px-2 lg:px-3.5 rounded-lg transition-all duration-300";
+    const baseClass = "flex gap-3 items-center w-fit lg:pr-4.5 py-2 px-2 lg:px-3.5 rounded-2xl transition-all duration-300";
     return (
         <>
             <div className="flex flex-col justify-between fixed top-0  w-fit lg:w-56 h-screen pb-3">
@@ -37,8 +33,8 @@ function Sidebar() {
                             to="/home"
                             className={({ isActive }) =>
                                 isActive
-                                    ? `${baseClass} bg-zinc-900/80  text-white`
-                                    : `${baseClass} text-zinc-400 hover:bg-zinc-900/80 hover:text-white`
+                                    ? `${baseClass} dark:bg-zinc-900/80 bg-zinc-200 dark:text-white`
+                                    : `${baseClass} text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-900/80 dark:hover:text-white hover:text-black`
                             }
                         ><House className="w-5 h-5" />
                             <div className="text-lg hidden lg:flex">Home</div>
@@ -48,30 +44,21 @@ function Sidebar() {
                             to="/challenges"
                             className={({ isActive }) =>
                                 isActive
-                                    ? `${baseClass} bg-zinc-900/80  text-white`
-                                    : `${baseClass} text-zinc-400 hover:bg-zinc-900/80 hover:text-white`
+                                    ? `${baseClass} dark:bg-zinc-900/80 bg-zinc-200 dark:text-white`
+                                    : `${baseClass} text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-900/80 dark:hover:text-white hover:text-black`
                             }
                         ><Medal className="w-5 h-5" />
                             <div className="text-lg hidden lg:flex">Challanges</div>
                         </NavLink>
 
-                        <NavLink
-                            to="/messages"
-                            className={({ isActive }) =>
-                                isActive
-                                    ? `${baseClass} bg-zinc-900/80  text-white`
-                                    : `${baseClass} text-zinc-400 hover:bg-zinc-900/80 hover:text-white`
-                            }
-                        ><MessageSquareMore className="w-5 h-5" />
-                            <div className="text-lg hidden lg:flex">Messages</div>
-                        </NavLink>
+
 
                         <NavLink
                             to="/notifications"
                             className={({ isActive }) =>
                                 isActive
-                                    ? `${baseClass} bg-zinc-900/80 text-white`
-                                    : `${baseClass} text-zinc-400 hover:bg-zinc-900/80 hover:text-white`
+                                    ? `${baseClass} dark:bg-zinc-900/80 bg-zinc-200 dark:text-white`
+                                    : `${baseClass} text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-900/80 dark:hover:text-white hover:text-black`
                             }
                         >
                             <div className="relative">
@@ -89,8 +76,8 @@ function Sidebar() {
                             to="/bookmarks"
                             className={({ isActive }) =>
                                 isActive
-                                    ? `${baseClass} bg-zinc-900/80 text-white`
-                                    : `${baseClass} text-zinc-400 hover:bg-zinc-900/80 hover:text-white`
+                                    ? `${baseClass} dark:bg-zinc-900/80 bg-zinc-200 dark:text-white`
+                                    : `${baseClass} text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-900/80 dark:hover:text-white hover:text-black`
                             }
                         ><Bookmark className="w-5 h-5" />
                             <div className="text-lg hidden lg:flex">Bookmarks</div>
@@ -100,8 +87,8 @@ function Sidebar() {
                             to="/settings"
                             className={({ isActive }) =>
                                 isActive
-                                    ? `${baseClass} bg-zinc-900/80 text-white`
-                                    : `${baseClass} text-zinc-400 hover:bg-zinc-900/80 hover:text-white`
+                                    ? `${baseClass} dark:bg-zinc-900/80 bg-zinc-200 dark:text-white`
+                                    : `${baseClass} text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-900/80 dark:hover:text-white hover:text-black`
                             }
                         ><Settings className="w-5 h-5" />
                             <div className="text-lg hidden lg:flex">Settings</div>
@@ -110,21 +97,19 @@ function Sidebar() {
                             to={`/profile/${username}`}
                             className={({ isActive }) =>
                                 isActive
-                                    ? `${baseClass} bg-zinc-900/80 text-white`
-                                    : `${baseClass} text-zinc-400 hover:bg-zinc-900/80 hover:text-white`
+                                    ? `${baseClass} dark:bg-zinc-900/80 bg-zinc-200 dark:text-white`
+                                    : `${baseClass} text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-900/80 dark:hover:text-white hover:text-black`
                             }
                         ><User className="w-5 h-5" />
                             <div className="text-lg hidden lg:flex">Your Profile</div>
                         </NavLink>
-                        <Link to="/post" className="mt-3 mx-0.5 flex gap-1 items-center justify-center lg:w-full w-fit py-2 px-2 bg-sky-500 hover:bg-sky-600 text-black rounded-lg font-medium transition-all duration-300">
-                            <SendHorizontal className="w-4 h-4 flex lg:hidden" />
-                            <div className="text-lg hidden lg:flex">Post</div>
-                        </Link>
+                        <PostDialog />
                     </div>
                 </div>
                 <DropdownMenu >
-                    <DropdownMenuTrigger asChild>
-                        <div className="flex gap-2 p-2 px-2 items-center justify-between hover:bg-zinc-900/80 rounded-lg cursor-pointer transition-all duration-300">
+                    <DropdownMenuTrigger asChild className="bg-transparent">
+
+                        <div className="flex gap-2 p-2 px-2 items-center justify-between dark:hover:bg-zinc-900/80 hover:bg-zinc-300 rounded-2xl cursor-pointer transition-all duration-100">
                             <div className="flex gap-2 items-center">
                                 <div className="">
                                     <ScanFace className="w-7 h-7" />
@@ -140,11 +125,14 @@ function Sidebar() {
                         </div>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent className="w-56">
+                        <DropdownMenuItem className="cursor-pointer py-2 " >
+                            <ModeToggle />
+                        </DropdownMenuItem>
+                        <DropdownMenuSeparator />
                         <Link to="./signout">
                             <DropdownMenuItem className="cursor-pointer py-2 text-red-600" >
-
                                 Log out
-
+                                <DropdownMenuShortcut><LogOut className="w-3 h-3 text-red-500" /></DropdownMenuShortcut>
                             </DropdownMenuItem>
                         </Link>
                     </DropdownMenuContent>
