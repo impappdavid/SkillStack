@@ -5,6 +5,7 @@ import SignUp from "./components/mycomponents/signup";
 import { ThemeProvider } from "./components/mycomponents/themes/theme-provider";
 import AppLayout from "./layouts/AppLayout";
 import Home from "./pages/Home";
+import Notifications from "./pages/Notifications";
 
 
 
@@ -23,6 +24,7 @@ function App() {
               <AppLayout />
             }>
               <Route path="/home" element={<Home />} />
+              <Route path="/notifications" element={<Notifications />} />
             </Route>
           </Routes>
         </BrowserRouter>

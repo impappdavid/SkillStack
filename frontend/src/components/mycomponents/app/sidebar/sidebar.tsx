@@ -41,19 +41,6 @@ function Sidebar() {
                         </NavLink>
 
                         <NavLink
-                            to="/challenges"
-                            className={({ isActive }) =>
-                                isActive
-                                    ? `${baseClass} dark:bg-zinc-900/80 bg-zinc-200 dark:text-white`
-                                    : `${baseClass} text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-900/80 dark:hover:text-white hover:text-black`
-                            }
-                        ><Medal className="w-5 h-5" />
-                            <div className="text-lg hidden lg:flex">Challanges</div>
-                        </NavLink>
-
-
-
-                        <NavLink
                             to="/notifications"
                             className={({ isActive }) =>
                                 isActive
