@@ -70,9 +70,10 @@ function ExploreCard() {
                                     <DropdownMenuItem onClick={(e) => {
                                         e.preventDefault();    // Prevent anchor navigation
                                         e.stopPropagation();   // Stop event bubbling
-                                    }}>
+                                    }}
+                                    className="hover:bg-red-500/20 text-red-400">
                                         Report Post
-                                        <DropdownMenuShortcut><Flag className="w-4 h-4 text-red-500" /></DropdownMenuShortcut>
+                                        <DropdownMenuShortcut><Flag className="w-3 h-3 text-red-400" /></DropdownMenuShortcut>
                                     </DropdownMenuItem>
 
                                 </DropdownMenuGroup>
@@ -93,9 +94,8 @@ function ExploreCard() {
                     <div className="z-40 flex pl-9">
                         <div className="flex gap-2 w-full items-center justify-between">
                             <Link to={`/`} className="flex items-center group">
-                                <div className="flex justify-center h-8 w-8 items-center bg-transparent rounded-full group  group-hover:bg-sky-500/10 cursor-pointer">
-                                    <MessageSquare className={`dark:text-zinc-400 text-zinc-600 w-4 h-4 transition-all duration-300 group-hover:text-sky-500
-                                    }`} />
+                                <div className="flex justify-center h-8 w-8 items-center bg-transparent rounded-full group  group-hover:bg-sky-500/10 cursor-pointer dark:text-zinc-400 text-zinc-600 transition-all">
+                                    <MessageSquare className={` w-4 h-4 transition-all duration-300 group-hover:text-sky-500`} />
 
                                 </div>
                                 <div className="text-xs dark:text-zinc-400 text-zinc-600">13</div>
@@ -107,7 +107,7 @@ function ExploreCard() {
                                 <Button onClick={(e) => {
                                     e.preventDefault();    // Prevent anchor navigation
                                     e.stopPropagation();   // Stop event bubbling
-                                }} className="flex h-8 w-8 bg-transparent rounded-full group-hover:bg-rose-500/10">
+                                }} className="flex h-8 w-8 bg-transparent rounded-full group-hover:bg-rose-500/10 transition-all">
                                     <Heart className={`text-rose-500 transition-all duration-300 ${1 ? "fill-rose-500" : "fill-none"
                                         }`} />
 
@@ -120,7 +120,7 @@ function ExploreCard() {
                                     e.preventDefault();    // Prevent anchor navigation
                                     e.stopPropagation();   // Stop event bubbling
                                 }} className="flex h-8 w-8 transition-all duration-300 bg-transparent rounded-full group-hover:bg-sky-500/10 text-zinc-400 hover:text-white">
-                                    <ChartNoAxesColumn className={` transition-all duration-300 group-hover:text-sky-500 dark:text-zinc-400 text-zinc-600`} />
+                                    <ChartNoAxesColumn className={` transition-all duration-300 group-hover:text-sky-500 `} />
 
                                 </Button>
                                 <div className="text-xs dark:text-zinc-400 text-zinc-600">22k</div>
@@ -130,8 +130,8 @@ function ExploreCard() {
                                 <Button onClick={(e) => {
                                     e.preventDefault();    // Prevent anchor navigation
                                     e.stopPropagation();   // Stop event bubbling
-                                }} className="flex h-8 w-8 gap-1.5 transition-all duration-300 bg-transparent rounded-full hover:bg-sky-500/10 text-zinc-400 hover:text-white">
-                                    <Bookmark className={` transition-all duration-300 dark:text-zinc-400 text-zinc-600`} />
+                                }} className="flex h-8 w-8 gap-1.5 transition-all duration-300 bg-transparent rounded-full hover:bg-violet-500/10 text-zinc-400 hover:text-violet-500">
+                                    <Bookmark className={` transition-all duration-300 `} />
                                 </Button>
                                 <Button onClick={(e) => {
                                     e.preventDefault();    // Prevent anchor navigation

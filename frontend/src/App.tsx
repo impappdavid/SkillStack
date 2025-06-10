@@ -5,6 +5,9 @@ import SignUp from "./components/mycomponents/signup";
 import { ThemeProvider } from "./components/mycomponents/themes/theme-provider";
 import AppLayout from "./layouts/AppLayout";
 import Home from "./pages/Home";
+import Notifications from "./pages/Notifications";
+import Bookmarks from "./pages/Bookmark";
+import Profile from "./pages/Profile";
 
 
 
@@ -23,6 +26,9 @@ function App() {
               <AppLayout />
             }>
               <Route path="/home" element={<Home />} />
+              <Route path="/notifications" element={<Notifications />} />
+              <Route path="/bookmarks" element={<Bookmarks />} />
+              <Route path="/profile/:slug" element={<Profile />} />
             </Route>
           </Routes>
         </BrowserRouter>
