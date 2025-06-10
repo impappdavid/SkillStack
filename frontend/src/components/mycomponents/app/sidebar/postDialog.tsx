@@ -11,8 +11,30 @@ import {
     DialogTrigger,
 } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
+import {
+    Tabs,
+    TabsContent,
+    TabsList,
+    TabsTrigger,
+} from "@/components/ui/tabs"
+import { useEffect, useState } from "react"
 
 function PostDialog() {
+    const [activeTab, setActiveTab] = useState<string>('tab1');
+
+    // Load from localStorage on mount
+    useEffect(() => {
+        const savedTab = localStorage.getItem('activeTab');
+        if (savedTab) {
+            setActiveTab(savedTab);
+        }
+    }, []);
+
+    // Save to localStorage on change
+    const handleTabChange = (value: string) => {
+        setActiveTab(value);
+        localStorage.setItem('activeTab', value);
+    };
     return (
         <>
             <Dialog>
@@ -25,31 +47,38 @@ function PostDialog() {
                     </DialogTrigger>
                     <DialogContent className="sm:max-w-xl bg-zinc-950">
                         <DialogHeader className="flex justify-between w-full h-4">
+                            <Tabs defaultValue="explore" value={activeTab} onValueChange={handleTabChange} className="w-full relative absolute top-3 left-3">
+                                <div className="absolute top-0">
+                                    <TabsList className="flex justify-between w-fit p-0  h-9 rounded-none fixed  bg-zinc-950/60 backdrop-blur-2xl">
+                                        <TabsTrigger value="explore" className=" text-sm data-[state=active]:bg-zinc-900 rounded-lg border data-[state=active]:border-zinc-800 w-fit hover:bg-zinc-800/60 transition-all duration-500">Explore</TabsTrigger>
+                                        <TabsTrigger value="problems" className="text-sm data-[state=active]:bg-zinc-900 rounded-lg border data-[state=active]:border-zinc-800 w-fit hover:bg-zinc-800/60 transition-all duration-500">Problems</TabsTrigger>
+                                        <TabsTrigger value="codes" className="text-sm data-[state=active]:bg-zinc-900 rounded-lg border data-[state=active]:border-zinc-800 w-fit hover:bg-zinc-800/60 transition-all duration-500">Codes</TabsTrigger>
+                                    </TabsList>
+                                </div>
+                                <TabsContent value="explore" className="mt-12">
+                                    asd
+                                </TabsContent>
+                                <TabsContent value="problems" className="mt-12 h-full max-h-[600px]">
+                                    asd
+                                </TabsContent>
+                                <TabsContent value="codes" className="mt-12 h-full max-h-[600px]">
+                                    asd
+                                </TabsContent>
+                            </Tabs>
                             <div className="w-full flex justify-between items-center">
                                 <DialogClose className="flex">
                                     <Button
                                         variant="ghost"
                                         size="icon"
-                                        className="absolute top-3 left-3 rounded-full bg-black/50 hover:bg-black/70 text-white cursor-pointer"
+                                        className="absolute top-3 right-3 rounded-full bg-black/50 hover:bg-black/70 text-white cursor-pointer"
                                     >
                                         <X className="h-4 w-4" />
                                     </Button>
                                 </DialogClose>
-                                <div
-                                    className="absolute top-3 right-3  size-9 flex justify-center items-center rounded-full bg-sky-500/10 hover:bg-sky-500/20 text-white cursor-pointer"
-                                >
-                                    <ScanFace className="w-4 h-4" />
-                                </div>
+
                             </div>
                         </DialogHeader>
-                        <div className="grid gap-4 py-2">
-                            <div className="grid gap-3">
-                                <Input id="name-1" name="name" defaultValue="Pedro Duarte" />
-                            </div>
-                            <div className="grid gap-3">
-                                <Input id="username-1" name="username" defaultValue="@peduarte" />
-                            </div>
-                        </div>
+                        
 
                     </DialogContent>
                 </form>

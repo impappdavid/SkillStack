@@ -33,9 +33,9 @@ function Posts() {
                 <Tabs defaultValue="explore" value={activeTab} onValueChange={handleTabChange} className="w-full border-zinc-800/80 relative ">
                     <div className="absolute top-0">
                         <TabsList className="flex justify-between w-full p-0 h-12 border-b rounded-none fixed  max-w-[670px] bg-zinc-950/60 backdrop-blur-2xl">
-                            <TabsTrigger value="explore" className=" text-sm data-[state=active]:bg-sky-500/10 hover:bg-zinc-800/60 transition-all duration-500">Explore</TabsTrigger>
-                            <TabsTrigger value="problems" className="text-sm data-[state=active]:bg-sky-500/10 hover:bg-zinc-800/60 transition-all duration-500">Problems</TabsTrigger>
-                            <TabsTrigger value="codes" className="text-sm data-[state=active]:bg-sky-500/10 hover:bg-zinc-800/60 transition-all duration-500">Codes</TabsTrigger>
+                            <TabsTrigger value="explore" className="dark:data-[state=active]:border-sky-500/80 text-sm data-[state=active]:bg-sky-500/10 hover:bg-zinc-800/60 transition-all duration-500">Explore</TabsTrigger>
+                            <TabsTrigger value="problems" className="dark:data-[state=active]:border-sky-500/80 text-sm data-[state=active]:bg-sky-500/10 hover:bg-zinc-800/60 transition-all duration-500">Problems</TabsTrigger>
+                            <TabsTrigger value="codes" className="dark:data-[state=active]:border-sky-500/80 text-sm data-[state=active]:bg-sky-500/10 hover:bg-zinc-800/60 transition-all duration-500">Codes</TabsTrigger>
                         </TabsList>
                     </div>
                     <TabsContent value="explore" className="mt-12">

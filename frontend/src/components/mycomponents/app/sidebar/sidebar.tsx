@@ -16,7 +16,7 @@ function Sidebar() {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState<string | null>(null)
 
-    const [username, setUsername] = useState("")
+    const [username, setUsername] = useState("ethWong")
 
 
     const notificationCount = 4;
@@ -112,14 +112,14 @@ function Sidebar() {
                         </div>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent className="w-56">
-                        <DropdownMenuItem className="cursor-pointer py-2 " >
+                        <DropdownMenuItem className="cursor-pointer py-2 hover:bg-zinc-200 dark:hover:bg-zinc-900/80" >
                             <ModeToggle />
                         </DropdownMenuItem>
                         <DropdownMenuSeparator />
                         <Link to="./signout">
-                            <DropdownMenuItem className="cursor-pointer py-2 text-red-600" >
+                            <DropdownMenuItem className="cursor-pointer py-2 text-red-400 hover:bg-red-500/20" >
                                 Log out
-                                <DropdownMenuShortcut><LogOut className="w-3 h-3 text-red-500" /></DropdownMenuShortcut>
+                                <DropdownMenuShortcut><LogOut className="w-3 h-3 text-red-400" /></DropdownMenuShortcut>
                             </DropdownMenuItem>
                         </Link>
                     </DropdownMenuContent>
